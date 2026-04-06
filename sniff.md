@@ -21,4 +21,22 @@
     A network tap is a hardware device that you can place between two points on your cabling system in order to capture the packets between those two points. As with hubbing out, you place a piece of hardware on the network that allows you to capture the packets you need. The difference is that rather than using a hub, you use a specialized piece of hardware designed for net-work analysis.
 
  -ARP process
-    
+    when one computer wants to interract witht the other The
+    transmitting computer first checks its ARP cache to see if it already has the Chapter 2MAC address associated with the IP address of the destination computer. If it does not, it sends an ARP request to the data link layer broadcast address FF:FF:FF:FF:FF:FF. Devices without the destination computer’s IP address simply discard this ARP request. The destination machine replies to the packet with its MAC address via an ARP reply
+
+   ** ARP cache poisoning, sometimes called ARP spoofing, is the process of sending ARP messages to an Ethernet or router with fake MAC (layer 2) addresses in order to intercept the traffic of another computer
+   -Using Cain & Abel(old anf for windows) ARP Poisoning	bettercap or arpspoof are better kali tools
+   When attempting to poison the ARP cache you’ll need to collect certain information, including the IP address of your analyzer system, the remote system from which you wish to capture the traffic, and the router from which the remote system is downstream
+
+
+Tapping into the wire
+↓
+Do your switches support mirroring?
+├─ (Yes) → Use port mirroring
+└─ (No)  ↓
+Can a client be taken offline temporarily?
+├─ (No)  → Use ARP cache poisoning
+└─ (Yes) ↓
+Do you have access to a tap?
+├─ (Yes) → Use a tap
+└─ (No)  → Hub out
